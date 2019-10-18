@@ -26,7 +26,7 @@ app.get('/', function(req, res) {
     });
 
     //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index");
+    //res.render("index");
 });
 
 app.get('/random_comic', function(req, res) {
