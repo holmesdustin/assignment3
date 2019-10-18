@@ -42,8 +42,13 @@
 				<h4>Year: <%= year %></h4><br>
 				<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
 				<br>
-                <button formaction="/get_random_comic" method="POST" type="submit"> Get Random Comic </button>
+
             </div>
+				<div class="col-12">
+					<form action="/get_random_comic" method="POST">
+						<button class="btn btn-primary btn-lg"> Get Random Comic </button>
+					</form>
+				</div>
 			</div>
 		</div>
 
