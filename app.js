@@ -17,20 +17,27 @@ var complete = ["eat", "sleep"];
 
 app.get('/', function(req, res) {
     var request = require('request');
-    request("https://xkcd.com/info.0.json" , function(error, response, body) {
+    request("https://xkcd.com/info.0.json", function(error, response, body) {
         if (!error && response.statusCode === 200) {
             var object = JSON.parse(body);
-            img_url = object.img;
-            res.render("index", { img_url: img_url, title: object.title, year: object.year });
+            res.render("index", { img_url: object.img, title: object.title, year: object.year });
+        } else {
+            res.render("index", { title: "Failed to get title", year: "Failed to get year" });
         }
     });
-
-    //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    //res.render("index");
 });
 
 app.get('/random_comic', function(req, res) {
-    res.render("random_comic");
+    var request = require('request');
+    var random_number = Math.floor(Math.random() * 2217);
+    request("https://xkcd.com/" + random_number + "/info.0.json", function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            var object = JSON.parse(body);
+            res.render("random_comic", { img_url: object.img, title: object.title, year: object.year });
+        } else {
+            res.render("random_comic", { title: "Failed to get title", year: "Failed to get year" });
+        }
+    });
 });
 
 
