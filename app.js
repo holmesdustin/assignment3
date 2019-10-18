@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
         if (!error && response.statusCode === 200) {
             var object = JSON.parse(body);
             img_url = object.img;
-            res.render("index", { img_url: img_url });
+            res.render("index", { img_url: img_url, title: object.title, year: object.year });
         }
     });
 
