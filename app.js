@@ -15,15 +15,16 @@ var task = ["clean", "cook"];
 var complete = ["eat", "sleep"];
 
 app.get('/', function(req, res) {
-    var request = new XMLHttpRequest();
-    var imgURL;
-    request.open('GET', 'https://xkcd.com/info.0.json', true);
-    request.onload = function() {
-        var data = JSON.parse(this.response)
-        imgURL = data.img;
-    };
-    request.send();
-    res.render("index", { imgURL:imgURL });
+    // var request = new XMLHttpRequest();
+    // var imgURL;
+    // request.open('GET', 'https://xkcd.com/info.0.json', true);
+    // request.onload = function() {
+    //     var data = JSON.parse(this.response)
+    //     imgURL = data.img;
+    // };
+    // request.send();
+    console.log("test");
+    res.render("index");
 });
 
 app.get('/random_comic', function(req, res) {
