@@ -9,33 +9,41 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ encoded: true}));
+app.use(bodyParser.urlencoded({ encoded: true }));
 
 var task = ["clean", "cook"];
 var complete = ["eat", "sleep"];
 
-app.get('/', function (req, res){
-    res.render("index", {task:task, complete:complete});
+app.get('/', function(req, res) {
+    var request = new XMLHttpRequest();
+    var imgURL;
+    request.open('GET', 'https://xkcd.com/info.0.json', true);
+    request.onload = function() {
+        var data = JSON.parse(this.response)
+        imgURL = data.img;
+    };
+    request.send();
+    res.render("index", { imgURL:imgURL });
 });
 
-app.get('/random_comic', function (req, res){
+app.get('/random_comic', function(req, res) {
     res.render("random_comic");
 });
 
-app.post('/addtask', function(req,res){
+app.post('/addtask', function(req, res) {
     var newTask = req.body.newtask;
     task.push(newTask);
     res.redirect('/');
 });
 
-app.post('/removetask', function(req,res){
+app.post('/removetask', function(req, res) {
     var completeTask = req.body.check;
-    if(typeof completeTask === "string"){
+    if (typeof completeTask === "string") {
         complete.push(completeTask);
         task.splice(task.indexOf(completeTask), 1);
     }
-    else if (typeof completeTask === "object"){
-        for (var i = 0; i < completeTask.length; i++){
+    else if (typeof completeTask === "object") {
+        for (var i = 0; i < completeTask.length; i++) {
             complete.push(completeTask[i]);
             task.splice(task.indexOf(completeTask[i]), 1);
         }
@@ -43,6 +51,6 @@ app.post('/removetask', function(req,res){
     res.redirect('/');
 });
 
-http.createServer(app).listen(port, function(){
+http.createServer(app).listen(port, function() {
 
 });
