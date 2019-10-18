@@ -8,7 +8,6 @@ body {
   margin-top: 20px;
 }
 
-
 ul {
   margin: 0;
   padding: 0;
@@ -17,4 +16,13 @@ ul {
 img {
     width: 100%;
     height: auto;
+}
+
+.body-part-m {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.body-part-p {
+    padding: 20px;
 }

@@ -12,8 +12,8 @@
 	<link href="/css/styles.css" rel="stylesheet">
 </head>
 
-<body>
-	<div class="container">
+<body class="container text-center">
+	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,30 +28,28 @@
 			</div>
 		</nav>
 
-		<div class="row">
-			<div class="col-12">
-				<div class="jumbotron">
-					<h1 class="display-4"><b>XKCD Comic</b></h1>
-				</div>
-			</div>
-			<div class="col-12">
-				<hr class="my-4">
-			</div>
-			<div class="col-12 mx-auto text-center">
-				<h4>Title: <%= title %></h4><br>
-				<h4>Year: <%= year %></h4><br>
-				<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
-				<br>
-                <hr class="my-4">
-            </div>
-				<div class="col-12">
-					<form class="justify-content-center" action="/get_random_comic" method="POST">
-						<button class="btn btn-primary btn-lg"> Get Random Comic </button>
-					</form>
-				</div>
-			</div>
+		<div class="jumbotron">
+			<h1 class="display-4"><b>XKCD Comic</b></h1>
 		</div>
+		<hr class="my-4">
+	</header>
+	<div class="row body-part-m">
+		<div class="mx-auto text-center body-part-p">
+			<h4>Title: <%= title %></h4><br>
+			<h4>Year: <%= year %></h4><br>
+			<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
+			<br>
+            <br>
+            <form class="text-center" action="/get_random_comic" method="POST">
+					<button class="btn btn-primary btn-lg"> Get Random Comic </button>
+				</form>
+		</div>
+	</div>
 
+
+		<footer>
+			<small>©2019 XKCD Comic.<br>v1.0</small>
+		</footer>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 		</script>
