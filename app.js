@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
         json: true
     }, function(error, response, body) {
         if (!error && response.statusCode === 200) {
-            var object = Json.parse(body);
+            var object = JSON.parse(body);
             img_url = object.img;
         }
     });
@@ -31,8 +31,8 @@ app.get('/', function(req, res) {
     //var title;
     //var year;
 
-    //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", { img_url: img_url});
+    var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
+    res.render("index", { img_url: url});
 });
 
 app.get('/random_comic', function(req, res) {
