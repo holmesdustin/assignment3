@@ -1,5 +1,5 @@
 {
-  "name": "nodejsdemo",
+  "name": "assignment3",
   "version": "1.0.0",
   "description": "this is a demo",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YujingGao96/nodejsdemo.git"
+    "url": "git+https://github.com/YujingGao96/assignment3.git"
   },
   "author": "yujing",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YujingGao96/nodejsdemo/issues"
+    "url": "https://github.com/YujingGao96/assignment3/issues"
   },
-  "homepage": "https://github.com/YujingGao96/nodejsdemo#readme",
+  "homepage": "https://github.com/YujingGao96/assignment3#readme",
   "engines": {
     "node": "10.x"
   },
