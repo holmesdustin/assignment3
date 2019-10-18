@@ -21,12 +21,12 @@ app.get('/', function(req, res) {
         if (!error && response.statusCode === 200) {
             var object = JSON.parse(body);
             img_url = object.img;
-            console.log("test: " + img_url);
+            res.render("index", { img_url: img_url });
         }
     });
 
-    var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", { img_url: url });
+    //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
+    res.render("index");
 });
 
 app.get('/random_comic', function(req, res) {
