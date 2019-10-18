@@ -23,8 +23,18 @@ app.get('/', function(req, res) {
     //     imgURL = data.img;
     // };
     // request.send();
-    var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", {url:url});
+    var xmlhttp = new XMLHttpRequest();
+    var url;
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            url = myObj.img;
+        }
+    };
+    xmlhttp.open("GET", "https://xkcd.com/info.0.json", true);
+    xmlhttp.send();
+    //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
+    res.render("index", { url: url });
 });
 
 app.get('/random_comic', function(req, res) {
