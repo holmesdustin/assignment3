@@ -25,20 +25,20 @@ app.get('/', function(req, res) {
     // request.send();
     var xmlhttp = new XMLHttpRequest();
     var img_url;
-    var title;
-    var year;
+    //var title;
+    //var year;
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
             img_url = myObj.img;
-            title = myObj.title;
-            year = myObj.year;
+            //title = myObj.title;
+            //year = myObj.year;
         }
     };
     xmlhttp.open("GET", "https://xkcd.com/info.0.json", true);
     xmlhttp.send();
     //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", { img_url: img_url, title: title, year:year });
+    res.render("index", { img_url: img_url});
 });
 
 app.get('/random_comic', function(req, res) {
