@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
     //var year;
 
     var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", { img_url: url});
+    res.render("index", { img_url: img_url});
 });
 
 app.get('/random_comic', function(req, res) {
