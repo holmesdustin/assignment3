@@ -16,20 +16,21 @@ var task = ["clean", "cook"];
 var complete = ["eat", "sleep"];
 
 app.get('/', function(req, res) {
-    // var url = "https://xkcd.com/info.0.json";
-    // var img_url;
-    // request({
-    //     url: url,
-    //     json: true
-    // }, function(error, response, body) {
-    //     if (!error && response.statusCode === 200) {
-    //         var object = JSON.parse(body);
-    //         img_url = object.img;
-    //     }
-    // });
+    var url = "https://xkcd.com/info.0.json";
 
-    var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
-    res.render("index", { img_url: url });
+    request({
+        url: url,
+        json: true
+    }, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            var object = JSON.parse(body);
+            img_url = object.img;
+            res.render("index", { img_url: img_url });
+        }
+    });
+
+    //var url = "https://imgs.xkcd.com/comics/percent_milkfat.png";
+
 });
 
 app.get('/random_comic', function(req, res) {
