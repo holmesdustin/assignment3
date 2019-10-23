@@ -3,8 +3,7 @@ body {
   background-image: url("halloweenBG.jpg");
   background-size: contain;
   background-repeat: repeat;
-  opacity: 0.9;
-  filter: drop-shadow(8px 10px 15px black)
+  filter: drop-shadow(2px 5px 5px black)
 }
 
 ul {
