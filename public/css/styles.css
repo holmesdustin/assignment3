@@ -4,7 +4,8 @@ body {
   background-image: url("halloweenBG.jpg");
   background-size: contain;
   background-repeat: repeat;
-  opacity: 0.7;
+  opacity: 0.9;
+  filter: drop-shadow(8px 10px 15px black)
 }
 
 ul {
@@ -29,6 +30,7 @@ img {
 .jumbotron{
     background-image: url("bg.jpg");
     background-color: white;
+    filter: opacity(0.7);
 }
 
 .pumpkinFrame {
