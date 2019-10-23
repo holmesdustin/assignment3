@@ -38,3 +38,11 @@ img {
     margin-bottom: -20px;
     background-size: contain;
 }
+
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+}
