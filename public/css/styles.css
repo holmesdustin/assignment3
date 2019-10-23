@@ -32,9 +32,8 @@ img {
 
 .pumpkinFrame {
     background-image: url("pumpkinFrame.png");
-    height: 46px;
+    height: 40px;
     width: 100%;
-    margin-bottom: -20px;
     background-size: contain;
 }
 
