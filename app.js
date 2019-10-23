@@ -41,7 +41,8 @@ app.get('/random_comic', function(req, res) {
 });
 
 app.post('/get_random_comic', function(req,res){
-    res.redirect('/random_comic');
+    res.send("test");
+    //res.redirect('/random_comic');
 });
 
 http.createServer(app).listen(port, function() {
