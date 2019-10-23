@@ -34,9 +34,11 @@
 	</header>
 	<div class="row body-part-m">
 		<div class="mx-auto text-center body-part-p">
+        <div id = "randomPic">
 			<h4>Title: <%= title %></h4><br>
 			<h4>Year: <%= year %></h4><br>
 			<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
+        </div>
 			<br>
 			<br>
 			<form class="text-center" action="/get_random_comic" method="POST">
