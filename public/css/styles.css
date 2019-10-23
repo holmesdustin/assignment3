@@ -1,6 +1,10 @@
 body {
   background: rgb(245, 245, 245);
   margin-top: 20px;
+  background-image: url("halloweenBG.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    filter: opacity(0.7);
 }
 
 ul {
@@ -33,15 +37,4 @@ img {
     width: 100%;
     margin-bottom: -20px;
     background-size: contain;
-}
-
-.pumpkinBG {
-    width: 100%;
-    height: 100%;
-    background-image: url("halloweenBG.jpg");
-    background-size: contain;
-    background-repeat: repeat;
-    filter: opacity(0.7);
-    position: fixed;
-    z-index: -1;
 }
