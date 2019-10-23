@@ -1,6 +1,5 @@
 body {
   background: rgb(245, 245, 245);
-  margin-top: 20px;
   background-image: url("halloweenBG.jpg");
   background-size: contain;
   background-repeat: repeat;
@@ -30,7 +29,6 @@ img {
 .jumbotron{
     background-image: url("bg.jpg");
     background-color: white;
-    filter: opacity(0.7);
 }
 
 .pumpkinFrame {
