@@ -44,3 +44,7 @@ img {
   clear:both;
   padding-top:20px;
 }
+
+.card{
+    border-radius: 20px;
+}
