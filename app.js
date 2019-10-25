@@ -41,7 +41,17 @@ app.get('/random_comic', function(req, res) {
 });
 
 app.post('/get_random_comic', function(req,res){
-    res.redirect('/random_comic');
+    //res.redirect('/random_comic');
+    var request = require('request');
+    var random_number = Math.floor(Math.random() * 2217);
+    request("https://xkcd.com/" + random_number + "/info.0.json", function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            var object = JSON.parse(body);
+            res.render("random_comic", { img_url: object.img, title: object.title, year: object.year });
+        } else {
+            res.render("random_comic", { title: "Failed to get title", year: "Failed to get year" });
+        }
+    });
 });
 
 http.createServer(app).listen(port, function() {
