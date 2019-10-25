@@ -28,20 +28,21 @@ app.get('/', function(req, res) {
 });
 
 app.get('/random_comic', function(req, res) {
-    var random_number = Math.floor(Math.random() * 2217);
+    var random_number = Math.floor(Math.random() * 2219) + 1;
     getComic(random_number, res, "random_comic");
 });
 
 app.get('/another_random', function(req, res) {
-    var random_number = Math.floor(Math.random() * 2217);
+    var random_number = Math.floor(Math.random() * 2219) + 1;
     getComic(random_number, res, "another_random");
 });
 
-// app.post('/get_random_comic', function(req,res){
-//     res.redirect('/random_comic');
-// });
-
-
+/**
+ * This function is used for getting comic by passing a random number between 1 to 2219
+ * @param random_number : a random number from 1 to 2219
+ * @param res : the response page
+ * @param page : the page that you want to render
+ */
 function getComic(random_number, res, page){
     var request = require('request');
     request("https://xkcd.com/" + random_number + "/info.0.json", function(error, response, body) {
