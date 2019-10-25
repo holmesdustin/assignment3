@@ -12,69 +12,27 @@
 </head>
 
 <body class="container text-center">
-
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item "> <a href="/" title="Home"
-							class="nav-link ">Home</a></li>
-					<li class="nav-item active"> <a href="/random_comic"
-							title="Random Comic" class="nav-link ">Random Comic</a></li>
-				</ul>
+	<% include ./includes/header %>
+	<div class="card row body-part-m">
+		<div class="mx-auto text-center body-part-p">
+			<div id="randomPic">
+				<h4>Title: <%= title %></h4><br />
+				<h4>Year: <%= year %></h4><br />
+				<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
+                </div>
+				<br />
+				<br />
+				<form class="text-center">
+					<button id= "button" class="btn btn-primary btn-lg"> Get Random Comic </button>
+				</form>
 			</div>
-		</nav>
-
-		<div class="jumbotron">
-			<h1 class="display-4"><b>XKCD Comic</b></h1>
 		</div>
 
-		<br />
-		<hr class="my-4" />
-		<br />
-	</header>
-		<div class="card row body-part-m">
-			<div class="mx-auto text-center body-part-p">
-				<div id="randomPic">
-					<h4>Title: <%= title %></h4><br />
-					<h4>Year: <%= year %></h4><br />
-					<img src="<%= img_url %>" alt="The picture cannot be shown for some reasons">
-                </div>
-					<br />
-					<br />
-					<form class="text-center">
-						<button id= "button" class="btn btn-primary btn-lg"> Get Random Comic </button>
-					</form>
-				</div>
-			</div>
-
-			<br />
-			<hr class="my-4" />
-			<br />
-			<div class="pumpkinFrame"> </div>
-			<footer class="py-4 bg-dark text-white-50">
-				<div class="container text-center">
-					<small>Copyright &copy; 2019 XKCD Comic.<br />v2.0</small>
-				</div>
-			</footer>
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-				crossorigin="anonymous">
-			</script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-				integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-				crossorigin="anonymous">
-			</script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-				integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-				crossorigin="anonymous">
-			</script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script>
-				$("#button").click(function() {
+		<% include ./includes/footer %>
+		<% include ./includes/scripts %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$("#button").click(function() {
             $.ajax({
                 type: 'get',
                 url: '/another_random',
@@ -91,7 +49,7 @@
             });
             return false;
         });
-			</script>
+		</script>
 
 </body>
 
