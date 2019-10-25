@@ -12,9 +12,6 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ encoded: true }));
 
-var task = ["clean", "cook"];
-var complete = ["eat", "sleep"];
-
 app.get('/', function(req, res) {
     var request = require('request');
     request("https://xkcd.com/info.0.json", function(error, response, body) {
