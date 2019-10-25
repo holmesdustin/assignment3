@@ -75,7 +75,6 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 			<script>
 				$("#button").click(function() {
-                    alert("button clicked");
             $.ajax({
                 type: 'get',
                 url: '/another_random',
@@ -84,7 +83,6 @@
                 },
                 dataType: "HTML",
                 success: function(result) {
-                    alert("got result: " + result);
                     $("#randomPic").html(result);
                 },
                 error: function() {

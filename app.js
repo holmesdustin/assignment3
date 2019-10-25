@@ -29,12 +29,12 @@ app.get('/', function(req, res) {
 
 app.get('/random_comic', function(req, res) {
     var random_number = Math.floor(Math.random() * 2217);
-    getComic(random_number, res);
+    getComic(random_number, res, "random_comic");
 });
 
 app.get('/another_random', function(req, res) {
     var random_number = Math.floor(Math.random() * 2217);
-    getComic(random_number, res);
+    getComic(random_number, res, "another_random");
 });
 
 // app.post('/get_random_comic', function(req,res){
@@ -42,15 +42,15 @@ app.get('/another_random', function(req, res) {
 // });
 
 
-function getComic(random_number, res){
+function getComic(random_number, res, page){
     var request = require('request');
     request("https://xkcd.com/" + random_number + "/info.0.json", function(error, response, body) {
         if (!error && response.statusCode === 200) {
             var object = JSON.parse(body);
 
-            res.render("random_comic", { img_url: object.img, title: object.title, year: object.year });
+            res.render(page, { img_url: object.img, title: object.title, year: object.year });
         } else {
-            res.render("random_comic", { img_url: "", title: "Failed to get title", year: "Failed to get year" });
+            res.render(page, { img_url: "", title: "Failed to get title", year: "Failed to get year" });
         }
     });
 }
