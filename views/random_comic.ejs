@@ -76,13 +76,14 @@
 				$("#button").click(function() {
                     alert("button clicked");
             $.ajax({
-                type: 'post',
-                url: 'https://assignment3-server-side.herokuapp.com/another_random',
+                type: 'get',
+                url: '/another_random',
                 data: {
                     "random": true
                 },
                 dataType: "HTML",
                 success: function(result) {
+                    alert("got result: " + result);
                     $("#randomPic").html(result);
                 },
                 error: function() {
