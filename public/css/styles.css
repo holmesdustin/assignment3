@@ -26,9 +26,10 @@ img {
 }
 
 .jumbotron{
-    background-image: url("bg.jpeg");
+    background-image: url("bg.jpg");
     background-color: white;
     border-radius: 0px 0px 20px 20px;
+    color: aliceblue;
 }
 
 .pumpkinFrame {
